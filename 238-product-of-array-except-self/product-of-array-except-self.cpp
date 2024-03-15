@@ -2,7 +2,6 @@ class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
         
-        vector<int> ans(nums.size(), 0);
         int curr_pro = 1, zero_count = 0;
 
         for (int i: nums) {
@@ -21,15 +20,17 @@ public:
         if (zero_count == 1) {
             for (int i=0; i<nums.size(); i++) {
                 if (nums[i] == 0) {
-                    ans[i] = curr_pro;
-                    return ans;
+                    nums[i] = curr_pro;
+                } else {
+                    nums[i] = 0;
                 }
             }
+                    return nums;
         }
 
         for (int i=0; i<nums.size(); i++) {
-            ans[i] = curr_pro / nums[i];
+            nums[i] = curr_pro / nums[i];
         }
-        return ans;
+        return nums;
     }
 };
