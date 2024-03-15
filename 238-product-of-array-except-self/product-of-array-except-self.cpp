@@ -5,6 +5,9 @@ public:
         int curr_pro = 1, zero_count = 0;
 
         for (int i: nums) {
+            if (i == 1) {
+                continue;
+            }
             if (i != 0) {
                 curr_pro *= i;
             } else {
@@ -25,7 +28,7 @@ public:
                     nums[i] = 0;
                 }
             }
-                    return nums;
+            return nums;
         }
 
         for (int i=0; i<nums.size(); i++) {
