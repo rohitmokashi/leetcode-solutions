@@ -11,7 +11,7 @@
 class Solution {
 private:
     ListNode* temp = NULL;
-    int l = 0;
+    int l = 0, num;
 
     void reverse(ListNode* node) {
 
@@ -26,7 +26,7 @@ private:
         }
         
         if (l > 0) {
-            int num = node->val;
+            num = node->val;
             node->val = temp->val;
             temp->val = num;
             temp = temp->next;
