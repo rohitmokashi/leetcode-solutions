@@ -11,11 +11,12 @@
 class Solution {
 private:
     ListNode* temp = NULL;
-    int l = 0, mid = 0;
+    int l = 0;
 
     void reverse(ListNode* node) {
 
         if (node == NULL) {
+            l = l/2;
             return;
         }
         else{
@@ -24,12 +25,12 @@ private:
             reverse(node->next);
         }
         
-        if (mid < l/2) {
+        if (l > 0) {
             int num = node->val;
             node->val = temp->val;
             temp->val = num;
             temp = temp->next;
-            mid++;
+            l--;
             // cout << num << " " << node->val << " " << mid << endl;
         }
         else return;
